@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Data;
 using SalesWebMvc.Models;
@@ -31,7 +27,7 @@ namespace SalesWebMvc.Controllers
             {
                 return NotFound();
             }
-
+            
             var department = await _context.Department.FirstOrDefaultAsync(m => m.Id == id);
             if (department == null)
             {
@@ -62,7 +58,7 @@ namespace SalesWebMvc.Controllers
         }
 
         // GET: Departments/Edit/5
-        public async  Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
